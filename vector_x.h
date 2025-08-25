@@ -327,7 +327,7 @@ public:
 		}
 	}
 
-	//20(3)Insert
+	//20(3). Insert
 	T* insert(T* pos, size_type n, T& val) {
 		if (m_finish != e_end) {
 			if (m_finish != pos) {
