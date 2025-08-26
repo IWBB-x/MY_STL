@@ -327,9 +327,9 @@ public:
 		}
 	}
 
-	//20(3). Insert
+	//20 (3). Insert
 	T* insert(T* pos, size_type n, T& val) {
-		if (m_finish != e_end) {
+		if (m_finish != e_end) { 
 			if (m_finish != pos) {
 				//std::construct_at(m_finish,std::move(*(m_finish-1)));
 				new(static_cast<void*>(m_finish))T(*(m_finish - 1));
@@ -397,9 +397,9 @@ public:
 	}
 
 	// 23.在末尾添加一个元素的函数
-	void push_back(const value_type& val) {
-		if (m_finish == m_end_of_storage) { 
-			reserve(std::max(size() + 1, 2 * size());
+	void push_back(const T& val) {
+		if (m_finish == e_end) { 
+			reserve(std::max(size() + 1, 2 * size()));
 		}
 		new (m_finish) T(val); 
 		++m_finish;
@@ -407,8 +407,9 @@ public:
 
 	// 24.在末尾添加一个元素移动tianjia
 	void push_back(T&& val) {
-		if (m_finish == e_end) {
-			reserve(std::max(size() + 1, 2 * size());
+		if (m_finish == e_end) 
+		{
+			reserve(std::max(size() + 1, 2 * size()));
 		}
 		new (m_finish) T(std::move(val)); // 移动构造
 		++m_finish;
