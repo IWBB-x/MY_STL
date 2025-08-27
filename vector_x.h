@@ -92,7 +92,7 @@ public:
 	//7.øΩ±¥ππ‘Ï
 	vector(const vector& other) {
 		size_type n = other.size();
-		size_type cap = other.capacity();
+		size_type cap = other._capacity();
 
 		m_start = allocate(cap);
 		e_end = m_start + n;
@@ -424,3 +424,4 @@ public:
 	}
 };
 }
+
