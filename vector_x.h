@@ -415,6 +415,7 @@ public:
 		++m_finish;
 	}
 
+
 	// 25.ÒÆ³ıÄ©Î²ÔªËØ
 	void pop_back() {
 		if (m_finish > m_start) {
